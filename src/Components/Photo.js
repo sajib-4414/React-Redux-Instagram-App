@@ -1,6 +1,7 @@
 import {React} from 'react'
 import PropTypes from 'prop-types'
 import {Link} from "react-router-dom";
+import {startRemovingPost} from "../redux/actions";
 function Photo(props){
     const post = props.post;
     return <figure className='figure'>
@@ -8,7 +9,7 @@ function Photo(props){
         <figcaption> <p>{post.description}</p></figcaption>
         <div className='button-container'>
             <button onClick={ ()=>{
-                props.removePost(props.index)
+                props.startRemovingPost(props.index, post.id)
                 props.history.push('/')
             }}>Remove</button>
             <Link className='button' to={`/single/${post.id}`}>
