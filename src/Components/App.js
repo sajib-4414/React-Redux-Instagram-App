@@ -6,7 +6,8 @@ import { useDispatch } from 'react-redux';
 import { withRouter } from "react-router";
 function mapStateToProps(state){
     return {
-        posts: state
+        posts: state.posts,
+        comments: state.comments
     }
 }
 
